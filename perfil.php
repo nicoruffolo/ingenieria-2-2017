@@ -1,19 +1,14 @@
-<?php
-	session_start();
-	 if (isset($_SESSION['admin']) && $_SESSION['admin']==0) {
+<?php 
+    session_start();
+    if ( empty($_SESSION['id'])){
+       header("location:index.php?no=Inicie Sesion por favor"); }
+    
+     $idies = $_SESSION['id'];
+     //echo($idies);exit();
 
-		$_SESSION['guarda'] = "no sos un administrador";
-		header("location:index.php");
-	}
-	if (empty($_SESSION['id'])){
-		$_SESSION['fede'] = "Imposible acceder a este sitio";
-		header("location:index.php");
-	}
-//	if (isset($_SESSION['emi'])){
-//		echo $_SESSION['emi'];
-//	}
-	?>
-	<!DOCTYPE html>
+
+?>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -25,16 +20,15 @@
   <link rel="stylesheet" type="text/css" href="estilis.css">
 </head>
 <body> 
-<a href="usuarios.php">Volver </a> </br>
- <h1> Perfil del usuario</h1>
-   <?php
-		include ('conexion.php');
-     	$conexi=conectar();
-     	$aux=$_GET['id'];
-
-
+ <?php
+     include ('conexion.php');
+    ?> <div> <a style="margin-right:1250px;margin-top: 12px; " href="index.php ">   Home </a> </div> <?php
+    ?> <div> <a style="margin-right:1250px;margin-top: 12px; " href="editarperfil.php ">   Editar Perfil </a> </div> 
+       
+     <div> <a   onclick="if(!confirm('seguro que deseas borrar  ?')) return false"    style="margin-right:1250px;margin-top: 12px; " href="bajaperfil.php "> Desactivar Cuenta </a> </div>
+    <?php
     $conexi=mysqli_connect("localhost","root","","ingedos") or die("ingreso");
-  	$usuarios = "SELECT * from usuario where id_email= '" . $aux . "' and  estado =0 ";
+  	$usuarios = "SELECT * from usuario where id_email= '" . $_SESSION['id'] . "' and  estado =0 ";
     //echo($usuarios);exit();
     $result = mysqli_query($conexi, $usuarios);
     ?> <div style="text-align: center;"> <?php
@@ -107,7 +101,9 @@
                    }
                   ?>  </br> 
               	</div>  
-              <?php   } ?> 	
-              <a href="confirmareliminusu.php?id=<?php echo $aux; ?>"> Eliminar usuario</a>
-
-
+              <?php   } ?>
+             <div> <a style="margin-right:1250px;margin-top: -34px; " href="vergauchadas.php ">   Ver mis gauchadas </a> </div>
+             <div> <a style="margin-right:1250px;margin-top: 12px; " href="vermiscoment.php ">   Ver mis comentarios </a> </div>
+             <div> <a style="margin-right:1250px;margin-top: 12px; " href="verrecibidos.php ">   Ver comentarios recibidos </a> </div>
+             <div> <a style="margin-right:1250px;margin-top: 12px; " href="vermispostula.php ">   Ver mis postulaciones </a> </div>
+             <div> <a style="margin-right:1250px;margin-top: 12px; " href="vermiscalifica.php">   Ver mis calificaciones </a> </div>

@@ -15,13 +15,9 @@
 	include("conexion.php");
 	$conexi=conectar();
 	$id = $_GET['id'];
-	$gauchada="SELECT gauchada_id from  comentarios where id_comentario = '$id' ";
-	$comentarios="UPDATE comentarios set estado= 1 where id_comentario=  '$id'";
-	$hacer=mysqli_query($conexi,$comentarios);
-	$query=mysqli_query($conexi,$gauchada);
-	$gauchi=mysqli_fetch_array($query);	
-	$dame= $gauchi['gauchada_id'];
-	$gauchadas ="UPDATE gauchada set estado= 1 where id ='$dame'";
-	$sii= mysqli_query($conexi,$gauchadas);
-	header("location:indexadmin.php");
+	$comentarios="UPDATE comentarios set estado = 1 where estado = 0 and gauchada_id = '$id'";
+	$ruu=mysqli_query($conexi,$comentarios);
+	$gauchada="UPDATE gauchada set estado = 2 where id = '$id'";
+	$lagaucha=mysqli_query($conexi,$gauchada);
+	header("location:exitoenbaja.php");
 ?>

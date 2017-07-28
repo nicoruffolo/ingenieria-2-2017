@@ -66,17 +66,20 @@
                          
                       
 
-                </div>
+                
             <?php   } ?>
              <hr size="8px" color="black"/> <?php
-                while ($cantina=mysqli_fetch_array($vitamina)){
-             		?> <div style="margin-left: 524px;">
-             			<?php echo $cantina['id_nombre']; ?>: </br> 
-                       <h4>Cuerpo:	<?php 	echo	$cantina['cuerpo']; if ($cantina['estado'] == 0){ ?> <a href="eliminarelcoment.php?id=<?php echo $cantina['id_comentario'];?>"> eliminar</a> <?php }  else { ?> <h4 style="margin-left: 504px ">  <?php echo "                 comentario eliminado"; ?> </h4> <?php  } ?> </h4> </br> 
-                       	</h4> Respuesta: <?php 	echo 	$cantina['respuesta']; ?> </h4></br>
-                     </div>
-                     <hr size="8px" color="black"/>
-                     <?php  	 } ?>
+       while ($i = mysqli_fetch_array($vitamina)) {
+       if ($i > 0){
+        ?> <div style="padding-left: 0px;"> <?php
+          ?> <h3> Comentario: </br></br> <?php echo   $i['cuerpo']; ?> </h3> <?php if ($i['estado'] == 1){echo "comentario eliminado";} else { ?> <a href="eliminarelcoment.php?id=<?php echo $i['id_comentario'];?>">eliminar</a> <?php } ?>
+                  
+                   <h4> Respuesta: </h4> <?php if($i['respuesta'] != "") {echo   $i['respuesta'];} else {echo("Este comentario no tiene respuesta");} ?>  </br>
+                
+           </div>
+           <hr size="8px" color="black"/>
+    <?php  }  ?>
+  <?php } ?>
 
                        	
-          </br> </br>  <a href="eliminarlagaucha.php?id=<?php echo $id; ?>"> Eliminar La Gauchada</a>
+          </br>   <a href="eliminarlagaucha.php?id=<?php echo $id; ?>"> Eliminar La Gauchada</a>
