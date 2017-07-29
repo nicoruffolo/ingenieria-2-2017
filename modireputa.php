@@ -167,6 +167,14 @@
     else {
         //exit();
     	$minimo=$_POST['min'];
+        $charge="SELECT min(puntaje_inicial) from reputacion where estado = 0";
+        $querycharge=mysqli_query($conexi,$charge);
+        $f=mysqli_fetch_array($querycharge);
+        $puntominimo=$f['min(puntaje_inicial)'];
+        $lalola="SELECT * from reputacion where estado = 0 and puntaje_inicial = $puntominimo";
+        $querylalola=mysqli_query($conexi,$lalola);
+        $q=mysqli_fetch_array($querylalola);
+        $repuminima=$q['id_nombre'];
     	$borro="UPDATE reputacion set estado = 1 where estado = 0 and puntaje_inicial = $minimo and extremo = 0 and puntaje_final is null and id_nombre != '$id'";
     	$hacer=mysqli_query($conexi,$borro);
     	$insertar="UPDATE reputacion set id_nombre = '$original', puntaje_inicial = $minimo, puntaje_final = null where id_nombre = '$id'";
@@ -254,15 +262,22 @@ $robert=mysqli_query($conexi,$juan);
 
 
 $lista1="SELECT * from reputacion where estado = 0 order by puntaje_inicial,puntaje_final";
-//echo($lista1);exit()
+//echo($lista1);exit();
 $hago1=mysqli_query($conexi,$lista1);
         $ant_ide="";
         $ant_inicial="";
         $ant_final="";
         $ant_extremo="";
+        $root=false;
         while ($a = mysqli_fetch_array($hago1)){
             $reputacion=$a['id_nombre'];
             //echo $reputacion;exit();
+            if($root == true){
+                $root=false;
+                $otropunto=$a['puntaje_inicial'] - 1;
+                $consulta50="UPDATE reputacion set puntaje_inicial = $otropunto where id_nombre = '$ant_ide'";
+                $query50=mysqli_query($conexi,$consulta50);
+            } else {
             if (($ant_ide != "") and ($ant_inicial != "") and ($ant_extremo != "")){
                 if($ant_final == null){
                     $valor=$ant_inicial + 1;
@@ -273,7 +288,10 @@ $hago1=mysqli_query($conexi,$lista1);
                     $modificacion="UPDATE reputacion set puntaje_inicial = $valor where id_nombre = '$reputacion'";
                     $barbaro=mysqli_query($conexi,$modificacion);
                 }
+            } else {
+                $root=true;
             }
+           } 
             $ant_ide=$a['id_nombre'];
             $ant_inicial=$a['puntaje_inicial'];
             $ant_final=$a['extremo'];
@@ -319,6 +337,16 @@ if($prev == true){
     $juan="UPDATE reputacion set puntaje_final = null where estado = 0 and extremo = 0 and puntaje_inicial = puntaje_final";
     $robert=mysqli_query($conexi,$juan);
 }
+if($_POST['max'] == null){
+    if($_POST['min'] == $puntominimo){
+        $arreglo="UPDATE reputacion set puntaje_inicial = $minimo, extremo = 0 where id_nombre = '$id'";
+        $queryarreglo=mysqli_query($conexi,$arreglo);
+        $puntoant=$minimo - 1;
+        $arreglito="UPDATE reputacion set puntaje_inicial = $puntoant where id_nombre = '$repuminima'";
+        $queryarreglito=mysqli_query($conexi,$arreglito);
+    }
+}
+
 
 
 header("location:modificarepuexitosa.php?id=$id");
