@@ -28,7 +28,7 @@
 <h1 style="text-align: center;">Agregue una nueva categoria:</h1></br>
 <a href="catego.php">Volver </a> </br> 
 	
-	<form action="altadecate.php" method="post">   <h4> Nueva categoria: </br>	<input type="text" name="cate" value="" pattern="[a-z]+" style="text-transform:lowercase;" required="" onkeyup="javascript:this.value=this.value.toLowerCase();" onClick="nospaces();">  </h4> </br>
+	<form action="altadecate.php" method="post">   <h4> Nueva categoria: </br>	<input type="text" name="cate" value="" pattern="[a-z]+" style="text-transform:lowercase;" required=""  pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" onkeyup="javascript:this.value=this.value.toLowerCase();" onClick="nospaces();">  </h4> </br>
 		<input type="submit" name="enviar">
    </form> <?php
    if (isset($_GET['nada'])){

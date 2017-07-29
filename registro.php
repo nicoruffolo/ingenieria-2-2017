@@ -30,7 +30,7 @@
 
 					<label > Email (example@algo.com)</br>
 					<!-- pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$-->
-					<input title="Falta correo" type="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+.com"   name="correo" id="correo" size="32"   value="<?php if (
+					<input title="Falta correo" type="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+.com"   name="correo" id="correo" size="32" onkeyup="javascript:this.value=this.value.toLowerCase();"   value="<?php if (
 							$error == "Ya existe una cuenta de usuario con ese email"){
 						if(isset($_POST['correo'])){  echo $_POST['correo']; }}?>"         required=""/></label> </br>
 

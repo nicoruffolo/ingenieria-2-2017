@@ -34,7 +34,8 @@
                       <?php if($i['foto'] == null){ ?>
                      <img width="360" src="imagenes/avatar.png"> <?php } 
                      else {
-                      ?> <img width="360" src="mostrar.php?id=<?php echo $i ['id'];?>"/> 
+
+                      ?> <img width="360" src="mostrar.php?id=<?php echo $i ['id_favor'];?>"/>
                   <?php } ?>      
                     </p>
 

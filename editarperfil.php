@@ -41,7 +41,7 @@
 
                   if (isset($_POST['nombre']) && $_POST['nombre'] == $i['id_email']  ){
                     $seleccionado = "selected"; } ?>
-          <input title="Ingrese usuario" type="text" name="nombre" id="nombre" size="32"  value= "<?php echo $i['id_email'];?> ">
+          <input title="Ingrese usuario" type="text" name="nombre" id="nombre" size="32"   onkeyup="javascript:this.value=this.value.toLowerCase();"/    value= "<?php echo $i['id_email'];?> ">
           </label>  </br>
          
            <label> telefono </br>
@@ -53,13 +53,13 @@
             <?php   $seleccionado = " ";
           if (isset($_POST['usu']) && $_POST['usu'] == $i['nombre']  ){
                     $seleccionado = "selected"; } ?>
-          <input title="Ingrese usuario" type="text" name="usu" id="nombre" size="32"  value= " <?php echo $i['nombre'];?>" required=""> </br> 
+          <input title="Ingrese usuario" type="text" name="usu" id="nombre" size="32"  value= " <?php echo $i['nombre'];?>" required=""   pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" > </br> 
 
               <label> apellido </br>
             <?php   $seleccionado = " ";
           if (isset($_POST['nombre']) && $_POST['apellido'] == $i['apellido']  ){
                     $seleccionado = "selected"; } ?>
-          <input title="Ingrese usuario" type="text" name="apellido" id="nombre" size="32"  value= " <?php echo $i['apellido'];?>" required=""> </br> 
+          <input title="Ingrese usuario" type="text" name="apellido" id="nombre" size="32"  value= " <?php echo $i['apellido'];?>" required=""  pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"> </br> 
           </br>
           <p> <?php
             if($i['foto'] == null ){

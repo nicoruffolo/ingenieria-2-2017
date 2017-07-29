@@ -24,7 +24,13 @@
     $aux=mysqli_fetch_array($pl1);
     $gruya="SELECT email from postulantes where id_favor = $id and email != '$user'";
     //echo($gruya);exit();
+    $elver= "SELECT * from usuario where id_email='$login'";
+    $yayo= "SELECT * from usuario where id_email = '$user'";
     $claro=mysqli_query($conexi,$gruya);
+    $oscuro= mysqli_query($conexi,$elver);
+    $ana=mysqli_query($conexi,$yayo);
+    $khalifa=mysqli_fetch_array($oscuro);
+    $ratajkowsky=mysqli_fetch_array($ana);
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,9 +42,14 @@
 <body> 
 <h1>Postulante seleccionado exitosamente</h1> </br> <?php 
 if ($aux['count(*)'] == 1) { ?>
-  <h2>Enviamos un correo electronico a "<?php echo $user ?>" para informarle que lo elegiste como postulante</h2></br> <?php
+  <h2>Enviamos un correo electronico  para informarle que lo elegiste como postulante a  "<?php echo $user; ?>" con tus datos:</br> nombre y apellido: <?php echo  $khalifa['nombre']; echo $khalifa['apellido'];?>" y telefono: <?php echo $khalifa['telefono']; ?>   </h2></br>
+    <h2>Has recibido un correo electronico con los datos de tu postulante elegido:<br>
+    nombre y apellido:<?php echo  $ratajkowsky['nombre']; echo $ratajkowsky['apellido'];?> y telefono: <?php echo $ratajkowsky['telefono'];?> </h2>
+   <?php
   } else {   ?>
-   <h2>Enviamos un correo electronico a "<?php echo $user ?>" para confirmarle que lo elegiste como postulante</h2></br></br>
+   <h2>Enviamos un correo electronico  para informarle que lo elegiste como postulante a  "<?php echo $user; ?> con tus datos:</br> nombre y apellido: <?php echo  $khalifa['nombre']; echo $khalifa['apellido'];?> " y telefono: <?php echo $khalifa['telefono']; ?> </h2></br></br>
+   <h2>Has recibido un correo electronico con los datos de tu postulante elegido:<br>
+    nombre y apellido:<?php echo  $ratajkowsky['nombre']; echo $ratajkowsky['apellido'];?> y telefono: <?php echo $ratajkowsky['telefono'];?> </h2>
    <h3>Tambien enviamos un correo electronico informando el rechazo a los usuarios:</h3></br>
    <?php while ($c = mysqli_fetch_array($claro)){
            echo($c['email']); ?> </br>

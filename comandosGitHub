@@ -1,0 +1,222 @@
+nickoopc@nickoopc-LT31:~$ git init
+Reinitialized existing Git repository in /home/nickoopc/.git/
+nickoopc@nickoopc-LT31:~$ git clone https://github.com/nicoruffolo/ingenieria-2-2017.git
+Clonar en «ingenieria-2-2017»...
+remote: Counting objects: 10, done.
+remote: Total 10 (delta 0), reused 0 (delta 0), pack-reused 10
+Unpacking objects: 100% (10/10), done.
+Comprobando la conectividad… hecho.
+nickoopc@nickoopc-LT31:~$ git status
+En la rama master
+
+Commit inicial
+
+Archivos sin seguimiento:
+  (use «git add <archivo>...» para incluir en lo que se ha de confirmar)
+
+	.Xauthority
+	.bash_history
+	.bash_logout
+	.bashrc
+	.cache/
+	.config/
+	.dbus/
+	.dmrc
+	.dropbox-dist/
+	.dropbox/
+	.gitconfig
+	.gitkraken/
+	.gksu.lock
+	.gnome/
+	.gtkrc-2.0
+	.icons/
+	.local/
+	.macromedia/
+	.mozilla/
+	.mplayer/
+	.mtpaint
+	.pam_environment
+	.pki/
+	.presage/
+	.profile
+	.sudo_as_admin_successful
+	.thumbnails/
+	.wget-hsts
+	.wine/
+	.xinputrc
+	.xscreensaver
+	.xsession-errors
+	.xsession-errors.old
+	2017-04-21-163514_1366x768_scrot.png
+	Descargas/
+	Escritorio/
+	ingenieria-2-2017/
+	nano.save
+
+no se ha agregado nada al commit pero existen archivos sin seguimiento (use «git add» para darle seguimiento)
+nickoopc@nickoopc-LT31:~$ git commit -m "un commit"
+En la rama master
+
+Commit inicial
+
+Archivos sin seguimiento:
+	.Xauthority
+	.bash_history
+	.bash_logout
+	.bashrc
+	.cache/
+	.config/
+	.dbus/
+	.dmrc
+	.dropbox-dist/
+	.dropbox/
+	.gitconfig
+	.gitkraken/
+	.gksu.lock
+	.gnome/
+	.gtkrc-2.0
+	.icons/
+	.local/
+	.macromedia/
+	.mozilla/
+	.mplayer/
+	.mtpaint
+	.pam_environment
+	.pki/
+	.presage/
+	.profile
+	.sudo_as_admin_successful
+	.thumbnails/
+	.wget-hsts
+	.wine/
+	.xinputrc
+	.xscreensaver
+	.xsession-errors
+	.xsession-errors.old
+	2017-04-21-163514_1366x768_scrot.png
+	Descargas/
+	Escritorio/
+	ingenieria-2-2017/
+	nano.save
+
+no se ha agregado nada al commit pero existen archivos sin seguimiento
+nickoopc@nickoopc-LT31:~$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+nickoopc@nickoopc-LT31:~$ git push origin master https://github.com/nicoruffolo/ingenieria-2-2017.git
+fatal: remote part of refspec is not a valid name in https://github.com/nicoruffolo/ingenieria-2-2017.git
+nickoopc@nickoopc-LT31:~$ git push origin master https://github.com/nicoruffolo/ingenieria-2-2017.git
+fatal: remote part of refspec is not a valid name in https://github.com/nicoruffolo/ingenieria-2-2017.git
+nickoopc@nickoopc-LT31:~$ git push origin master https://github.com/nicoruffolo/ingenieria-2-2017.git
+fatal: remote part of refspec is not a valid name in https://github.com/nicoruffolo/ingenieria-2-2017.git
+nickoopc@nickoopc-LT31:~$ git push origin master 'https://github.com/nicoruffolo/ingenieria-2-2017'
+fatal: remote part of refspec is not a valid name in https://github.com/nicoruffolo/ingenieria-2-2017
+nickoopc@nickoopc-LT31:~$ git commit -m "hola "
+En la rama master
+
+Commit inicial
+
+Archivos sin seguimiento:
+	.Xauthority
+	.bash_history
+	.bash_logout
+	.bashrc
+	.cache/
+	.config/
+	.dbus/
+	.dmrc
+	.dropbox-dist/
+	.dropbox/
+	.gitconfig
+	.gitkraken/
+	.gksu.lock
+	.gnome/
+	.gtkrc-2.0
+	.icons/
+	.local/
+	.macromedia/
+	.mozilla/
+	.mplayer/
+	.mtpaint
+	.pam_environment
+	.pki/
+	.presage/
+	.profile
+	.sudo_as_admin_successful
+	.thumbnails/
+	.wget-hsts
+	.wine/
+	.xinputrc
+	.xscreensaver
+	.xsession-errors
+	.xsession-errors.old
+	2017-04-21-163514_1366x768_scrot.png
+	Descargas/
+	Escritorio/
+	ingenieria-2-2017/
+	nano.save
+
+no se ha agregado nada al commit pero existen archivos sin seguimiento
+nickoopc@nickoopc-LT31:~$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+nickoopc@nickoopc-LT31:~$ git add .
+git commit -m "gada"
+^C
+nickoopc@nickoopc-LT31:~$ ^C
+nickoopc@nickoopc-LT31:~$ git add.
+git: «add.» no es una orden de git. Vea «git --help»
+
+¿Se refiere a este?
+	add
+nickoopc@nickoopc-LT31:~$ git add .
+^C
+nickoopc@nickoopc-LT31:~$ ^C
+nickoopc@nickoopc-LT31:~$ git add.
+git: «add.» no es una orden de git. Vea «git --help»
+
+¿Se refiere a este?
+	add
+nickoopc@nickoopc-LT31:~$ git add
+No se ha especificado nada, no hay nada que añadir.
+¿Quizá quiera decir «git add .»?
+nickoopc@nickoopc-LT31:~$ git add .
+^C
+nickoopc@nickoopc-LT31:~$ ^C
+nickoopc@nickoopc-LT31:~$ ^C
+nickoopc@nickoopc-LT31:~$ git add file.foo
+fatal: pathspec «file.foo» no coincide con ningún archivo
+nickoopc@nickoopc-LT31:~$ git add mostrar.php
+fatal: pathspec «mostrar.php» no coincide con ningún archivo
+nickoopc@nickoopc-LT31:~$ git add .
+^C
+nickoopc@nickoopc-LT31:~$ ^C
+nickoopc@nickoopc-LT31:~$ cd /home/nickoopc/ingenieria-2-2017
+nickoopc@nickoopc-LT31:~/ingenieria-2-2017$ git add .
+nickoopc@nickoopc-LT31:~/ingenieria-2-2017$ git commit -m "sisi " 
+[master a25d142] sisi
+ 7 files changed, 127 insertions(+)
+ create mode 100644 cerrarsesion.php
+ create mode 100644 conexion.php
+ create mode 100644 creditoobtenido.php
+ create mode 100644 estilis.css
+ create mode 100644 modificarcomentario.php
+ create mode 100644 mostrar.php
+ create mode 100644 prueba.php
+nickoopc@nickoopc-LT31:~/ingenieria-2-2017$ git push
+Username for 'https://github.com': nicoruffolo
+Password for 'https://nicoruffolo@github.com': 
+Counting objects: 9, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 2.33 KiB | 0 bytes/s, done.
+Total 9 (delta 0), reused 0 (delta 0)
+To https://github.com/nicoruffolo/ingenieria-2-2017.git
+   8e37e1e..a25d142  master -> master
+nickoopc@nickoopc-LT31:~/ingenieria-2-2017$ 

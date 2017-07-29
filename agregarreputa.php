@@ -34,7 +34,7 @@
      	  <div class="correte">
      	  			<label >Nombre de la reputacion</br>
 					<!-- pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$-->
-					<input title="Falta el nombre" type="text"  name="nombre" id="nombre" size="32" required="" onkeyup="javascript:this.value=this.value.toLowerCase();"/></label> </br>
+					<input title="Falta el nombre" type="text"  name="nombre" id="nombre" size="32" required=""  pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" onkeyup="javascript:this.value=this.value.toLowerCase();"/></label> </br>
 
 					<label for="user_login">Puntaje Minimo </br>
 					<input title="Se necesita un puntaje" type="number" name="min" id="min" 

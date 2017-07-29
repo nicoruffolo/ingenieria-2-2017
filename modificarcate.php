@@ -37,7 +37,7 @@
 
                   if (isset($_GET['id'])){
                     $seleccionado = "selected"; } ?>
-          <input type="text" name="cate" value="<?php echo $cate; ?>" style="text-transform:lowercase;" required="" onkeyup="javascript:this.value=this.value.toLowerCase();">
+          <input type="text" name="cate" value="<?php echo $cate; ?>" style="text-transform:lowercase;" required=""  pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" onkeyup="javascript:this.value=this.value.toLowerCase();">
           </label> </br>
           <input type="submit" name="modificar"> 
           </div>
